@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AHSENC CREATIVITY</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
+
+  /* Header & Bannière */
+  header { position: relative; text-align: center; }
+  header img.banner { width: 100%; height: auto; display:block; }
+  header .profile {
+    position: absolute; bottom:-60px; left:50%; transform:translateX(-50%);
+    width:120px; height:120px; border-radius:50%; border:4px solid white;
+    object-fit:cover; box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  }
+
+  /* Hero / Description principale */
+  .hero { text-align:center; padding:80px 20px 40px; color:#333; }
+  .hero h1 { font-size:2em; margin-bottom:10px; }
+  .hero p { font-size:1.1em; color:#555; line-height:1.5em; }
+
+  /* Services */
+  .services { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px; }
+  .service { background:#b6fcd5; padding:20px; border-radius:10px; flex:1 1 250px; max-width:300px; text-align:center; transition:0.3s; }
+  .service:hover { transform: translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
+  .service h3 { margin:10px 0; color:#2d6a4f; }
+  .service p { color:#333; font-size:0.95em; margin-bottom:15px; }
+  .service button { background:#25D366; color:white; border:none; padding:10px 15px; cursor:pointer; border-radius:5px; transition:0.3s; width:100%; font-weight:bold; }
+  .service button:hover { background:#1ebe57; }
+
+  /* Galerie */
+  .gallery { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; padding:20px; }
+  .gallery img { width:200px; border-radius:10px; cursor:pointer; transition:0.3s; }
+  .gallery img:hover { transform: scale(1.05); }
+
+  /* Lightbox */
+  .lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); justify-content:center; align-items:center; flex-direction:column; z-index:999; }
+  .lightbox img { max-width:90%; max-height:80%; border-radius:10px; margin-bottom:15px; }
+  .lightbox span { position:absolute; top:20px; right:30px; font-size:40px; color:white; cursor:pointer; }
+  .lightbox button { margin:5px; padding:10px 15px; border:none; border-radius:5px; cursor:pointer; background:#25D366; color:white; font-weight:bold; }
+  .lightbox button:hover { background:#1ebe57; }
+
+  /* Formulaire */
+  .order-form { background:white; max-width:500px; margin:40px auto; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.2); }
+  .order-form h2 { text-align:center; margin-bottom:20px; }
+  .order-form input, .order-form textarea { width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px; font-size:1em; }
+  .order-form button { width:100%; background:#25D366; color:white; border:none; padding:12px; font-size:1em; cursor:pointer; border-radius:5px; transition:0.3s; }
+  .order-form button:hover { background:#1ebe57; }
+
+  /* Témoignages */
+  .testimonials { background:#f0f8ff; padding:40px 20px; text-align:center; }
+  .testimonial { margin:15px 0; }
+  .testimonial p { font-style:italic; color:#333; }
+  .testimonial h4 { margin-top:5px; color:#2d6a4f; }
+
+  /* Contact & Localisation */
+  .contact, .location { text-align:center; margin:30px 0; font-size:1.1em; }
+  .contact a { margin:0 10px; padding:10px 15px; text-decoration:none; border-radius:5px; font-weight:bold; color:white; transition:0.3s; }
+  .contact a.whatsapp { background:#25D366; }
+  .contact a.facebook { background:#1877f2; }
+  .contact a:hover { opacity:0.9; }
+
+  /* Slogan 3D */
+  .slogan {
+    text-align:center; font-family: 'Pacifico', cursive; font-size:2em; margin:30px 20px;
+    color:#ff4d6d; text-shadow: 2px 2px 0 #f1c40f, 4px 4px 0 #9b59b6, 6px 6px 0 #3498db;
+  }
+
+  /* Footer en bleu et petit */
+  footer { text-align:center; padding:20px; background:#2d6a4f; color:#3498db; font-size:0.8em; }
+
+  @media(max-width:768px){
+    .services { flex-direction:column; align-items:center; }
+    .gallery img { width:45%; }
+    header .profile { width:100px; height:100px; bottom:-50px;}
+    .slogan{font-size:1.5em;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img class="banner" src="https://i.postimg.cc/CL0GNh86/FB-IMG-17559929144531276.jpg" alt="Bannière">
+  <img class="profile" src="https://i.postimg.cc/HxGckz4P/FB-IMG-17559930256555919.jpg" alt="Photo Profil">
+</header>
+
+<div class="hero">
+  <h1>AHSENC CREATIVITY – L’œil qui sublime vos instants 📸</h1>
+  <p>Spécialiste de la photographie professionnelle, AHSENC CREATIVITY capture l’authenticité et l’émotion de chaque moment. Son objectif : transformer vos souvenirs en images intemporelles, élégantes et chargées d’histoire.</p>
+</div>
+
+<div class="services">
+  <div class="service">
+    <h3>Photographie</h3>
+    <p>Capturez l’authenticité et l’émotion de chaque moment avec élégance.</p>
+    <button onclick="commandeWhatsApp('Photographie')">Commander</button>
+  </div>
+  <div class="service">
+    <h3>Vidéographie</h3>
+    <p>Racontez vos histoires en mouvement avec créativité et rythme.</p>
+    <button onclick="commandeWhatsApp('Vidéographie')">Commander</button>
+  </div>
+  <div class="service">
+    <h3>Graphisme</h3>
+    <p>Sublimez vos visuels avec originalité et professionnalisme.</p>
+    <button onclick="commandeWhatsApp('Graphisme')">Commander</button>
+  </div>
+</div>
+
+<div class="gallery">
+  <img src="https://i.postimg.cc/RVxkLHX5/IMG-20250824-010303.jpg" alt="Travail 1">
+  <img src="https://i.postimg.cc/q7qSvXMn/IMG-20250824-010247.jpg" alt="Travail 2">
+  <img src="https://i.postimg.cc/XJyPwj5Y/IMG-20250824-010914.jpg" alt="Travail 3">
+  <img src="https://i.postimg.cc/VN2GsxhQ/IMG-20250824-010813.jpg" alt="Travail 4">
+  <img src="https://i.postimg.cc/4NwWH701/IMG-20250824-010833.jpg" alt="Travail 5">
+  <img src="https://i.postimg.cc/YCs8bcMG/IMG-20250824-010732.jpg" alt="Travail 6">
+  <img src="https://i.postimg.cc/LXdDFzqm/IMG-20250824-010618.jpg" alt="Travail 7">
+  <img src="https://i.postimg.cc/C1jNhzDk/IMG-20250824-010651.jpg" alt="Travail 8">
+  <img src="https://i.postimg.cc/v8tzCxGd/IMG-20250824-010636.jpg" alt="Travail 9">
+  <img src="https://i.postimg.cc/rsZtMkh5/FB-IMG-17559947441321830.jpg" alt="Travail 10">
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="">
+  <div>
+    <button onclick="prevImage()">Précédent</button>
+    <button onclick="nextImage()">Suivant</button>
+  </div>
+</div>
+
+<!-- Formulaire -->
+<div class="order-form" id="order-form">
+  <h2>Formulaire de commande</h2>
+  <form onsubmit="envoyerWhatsApp(); return false;">
+    <input type="text" id="nom" placeholder="Votre nom" required>
+    <input type="text" id="residence" placeholder="Votre lieu de résidence" required>
+    <input type="tel" id="phone" placeholder="Votre numéro WhatsApp" required>
+    <textarea id="preoccupation" placeholder="Écrivez ici vos préoccupations..." rows="4"></textarea>
+    <button type="submit">Envoyer la commande</button>
+  </form>
+</div>
+
+<!-- Slogan -->
+<div class="slogan">Il ne savent pas encore de quoi je suis Capable 👌✌️</div>
+
+<!-- Contact et localisation -->
+<div class="contact">
+  <a href="https://wa.me/2290157034982" target="_blank" class="whatsapp">WhatsApp</a>
+  <a href="https://www.facebook.com/profile.php?id=61562700795085" target="_blank" class="facebook">Facebook</a>
+</div>
+<div class="location">📍 SÈ en Face de l'hôtel Pôle Nord</div>
+
+<!-- Footer -->
+<footer>
+Site développé par Israël Le Comédien 229🇧🇯 (0140615372)
+</footer>
+
+<script>
+  // WhatsApp Commande
+  function commandeWhatsApp(service) {
+    const numero = '2290157034982';
+    const message = `Bonjour, je souhaite commander le service : ${service}`;
+    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(message)}`, '_blank');
+  }
+
+  function envoyerWhatsApp() {
+    const nom = document.getElementById('nom').value;
+    const residence = document.getElementById('residence').value;
+    const phone = document.getElementById('phone').value;
+    const preoccupation = document.getElementById('preoccupation').value;
+    const numero = '2290157034982';
+    const message = `Bonjour, je souhaite passer une commande.\n\nNom : ${nom}\nLieu de résidence : ${residence}\nNuméro WhatsApp : ${phone}\nPréoccupation / Message : ${preoccupation}`;
+    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(message)}`, '_blank');
+  }
+
+  // Lightbox Galerie
+  const galleryImages = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  let currentIndex = 0;
+  galleryImages.forEach((img,index)=>{
+    img.addEventListener('click',()=>{
+      currentIndex=index;
+      lightbox.style.display='flex';
+      lightboxImg.src=img.src;
+    });
+  });
+  function closeLightbox(){ lightbox.style.display='none'; }
+  function prevImage(){ currentIndex=(currentIndex-1+galleryImages.length)%galleryImages.length; lightboxImg.src=galleryImages[currentIndex].src; }
+  function nextImage(){ currentIndex=(currentIndex+1)%galleryImages.length; lightboxImg.src=galleryImages[currentIndex].src; }
+</script>
+
+</body>
+</html>
